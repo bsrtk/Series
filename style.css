@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+
+.hero {
+    width: 100%;
+    height: 100vh; /* Tam ekran yüksekliğini ayarladık */
+    background-image: linear-gradient(rgba(12,3,51,0.3), rgba(12,3,51,0.3));
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.content {
+    text-align: center;
+    color: white;
+    z-index: 1; 
+}
+
+.content h1 {
+    font-size: 100px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.content h1:hover {
+    -webkit-text-stroke: 2px white;
+    color: transparent;
+}
+
+.content a {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-size: 24px;
+    border: 2px solid white;
+    padding: 14px 50px;
+    margin-top: 20px;
+    transition: 0.5s;
+}
+
+.content a:hover {
+    background: #fff;
+    color: black;
+}
+
+/* Video Ayarları */
+.back-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Videonun sayfayı tamamen kaplamasını sağladık */
+    z-index: -1; /* Videonun içerikten arkada olmasını sağladık */
+}
+
+/* Media query - Geniş ekranlar için */
+@media (max-width: 1200px) {
+    .back-video {
+        object-fit: cover; /* Video her zaman ekranı kaplayacak şekilde ayarlama yaptık */
+    }
+}
+
+/* Media query - Küçük ekranlar için */
+@media (max-width: 768px) {
+    .back-video {
+        object-fit: cover; /* Yine video ekranı kaplar */
+    }
+}
