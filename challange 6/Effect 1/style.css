@@ -1,0 +1,44 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.container{
+    width: 30rem;
+    height: 30rem;
+    position: relative; /*bu özellik bize görseli değiştirsek bile diğer etkenleri etkilemeyeceğini söylemiş oluyor diğer ögeler normal yerlerinde kalmaya devam ederler*/
+    overflow: hidden;/*içeriğin taşan kısımlarını gizlememizi sağlar. Scrollbars kullanmak istemediğimizde kullanmak faydalıdır.*/
+}
+
+.container img{
+    width: 100%;
+    transition: all 1s;
+}
+
+.content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*yazıyı ortalamak için */
+    display: flex;
+    flex-direction: column; /*bu şekilde yazıyı altlı üstlü hale getirdik*/
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all 1s;
+    background: rgb(23,23, 23);
+    transform: translateX(-100%);
+}
+
+.container:hover .content{
+    transform: translateX(0);
+}
+
+.container:hover img{
+    transform: translateX(100%);
+}
